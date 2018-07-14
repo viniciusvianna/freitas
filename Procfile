@@ -1,1 +1,1 @@
-web: gunicorn curso-freitas-ribeiro.wsgi --log-file -
+web: gunicorn freitas.wsgi --log-file -
