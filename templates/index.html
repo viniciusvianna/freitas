@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Curso Freitas Ribeiro</title>
+</head>
+<body>
+	<img src="{% static 'imagens/logo.png' %}" alt="Logo do curso">
+	<h1>Curso Freitas Ribeiro</h1>
+
+	{% if user.is_authenticated %}
+		<p>Bem-vindo {{ user.username }}</p>
+		<a href="{% url 'materials_list' %}">Lista de Materiais</a>
+		<a href="{% url 'logout' %}">Sair</a>
+	{% else %}
+		<a href="{% url 'login' %}">Entrar</a>
+		
+	{% endif %}
+
+	<a href="{% url 'login' %}"></a>
+</body>
+</html>

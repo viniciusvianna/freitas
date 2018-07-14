@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CFR - Materiais</title>
+</head>
+<body>
+	
+	<ul>
+		{% for material in materials %}
+
+			<li>
+				<a href="{% url 'update_material' material.id %}">{{ material.title }}</a> {{ material.subject }}
+				<a href="{% url 'delete_material' material.id %}">Deletar</a>
+			</li>
+
+		{% endfor %}
+	</ul>
+
+	<a href="{% url 'new_material' %}">Submeter Material</a>
+	<a href="{% url 'logout' %}">Sair</a>
+</body>
+</html>
