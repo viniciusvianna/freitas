@@ -33,5 +33,4 @@ urlpatterns = [
     path('login/', auth_views.login, name='login'),
     path('logout/', logout_user, name='logout'),
 ] 
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
-#show media files during develop, shut this down in production
+
