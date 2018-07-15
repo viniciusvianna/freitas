@@ -25,7 +25,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['curso-freitas-ribeiro.herokuapp.com']
+ALLOWED_HOSTS = ['curso-freitas-ribeiro.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'bootstrapform',
+
     'alunos',
     'materiais',
+    'home',
 ]
 
 MIDDLEWARE = [

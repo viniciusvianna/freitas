@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>CFR - Materiais</title>
-</head>
-<body>
+{% extends "index.html" %}
+
+{% block pageTitle %} CFR - Materiais {% endblock pageTitle %}
+
+{% block main %}
 	
 	<ul>
 		{% for material in materials %}
@@ -22,5 +17,5 @@
 
 	<a href="{% url 'new_material' %}">Submeter Material</a>
 	<a href="{% url 'logout' %}">Sair</a>
-</body>
-</html>
+
+{% endblock main %}

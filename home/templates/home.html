@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block pageTitle %}
+	Curso Freitas Ribeiro
+{% endblock pageTitle %}
+
+{% block main %}
+	<h1>Curso Freitas Ribeiro</h1>
+
+	{% if user.is_authenticated %}
+		<p>Bem-vindo {{ user.username }}!</p>
+		<a href="{% url 'logout' %}">Sair</a>
+	{% else %}
+		<a href="{% url 'login' %}">Entrar</a>
+	{% endif %}
+	
+{% endblock main %}

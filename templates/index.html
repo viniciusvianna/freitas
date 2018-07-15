@@ -5,21 +5,30 @@
 	<meta name="viewport"
 		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Curso Freitas Ribeiro</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css">
+	
+	<title>{% block pageTitle %}{% endblock pageTitle %}</title>
 </head>
 <body>
-	{# <img src="" alt="Logo do curso"> #}
-	<h1>Curso Freitas Ribeiro</h1>
+	
+	<div class="container" role="main">
 
-	{% if user.is_authenticated %}
-		<p>Bem-vindo {{ user.username }}</p>
-		<a href="{% url 'materials_list' %}">Lista de Materiais</a>
-		<a href="{% url 'logout' %}">Sair</a>
-	{% else %}
-		<a href="{% url 'login' %}">Entrar</a>
+	{% block main %}
 		
-	{% endif %}
+	{% endblock main %}
 
-	<a href="{% url 'login' %}"></a>
+	</div>
+
+	{# <footer class="footer">
+		<div class="container">
+			<span class="text-muted">Desenvolvido por Vinicius Vianna. Design por João Vítor.</span>
+		</div>
+	</footer> #}
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
